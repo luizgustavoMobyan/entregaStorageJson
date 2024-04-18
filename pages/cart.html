@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/output.css">
+    <link rel="stylesheet" href="/css/index.css">
+
+    <!--CSS-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!--ICONES FONTAWESOME-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+
+
+    <title>Cart List</title>
+</head>
+
+<body>
+    <header>
+        <div class="black-bar">
+            <a href="">
+                <h2>
+                    Aproveite agora **50% de desconto** em produtos selecionados!
+                    Não perca essa chance única de economizar! 💰
+                </h2>
+            </a>
+        </div>
+        <div class="logo">
+            <a href="/index.html"><img src="/assets/logo.png" alt="Logo da Empresa"></a>
+        </div>
+        <nav class="nav-menu">
+            <ul class="list-menu">
+                <li class="items-menu"><a href="#">Home</a></li>
+                <li class="items-menu"><a href="#">Contato</a></li>
+                <li class="items-menu"><a href="#">Sobre</a></li>
+                <li class="items-menu"><a href="#">Login</a></li>
+            </ul>
+        </nav>
+        <div class="search-favorites-cart-profile">
+            <div class="search-bar">
+                <input type="text" placeholder="Buscar...">
+            </div>
+            <div class="favorites-icon">
+                <img src="/assets/icons8-gostar-64.png" alt="">
+            </div>
+            <div class="cart-icon">
+                <img src="/assets/icons8-carrinho-de-compras-50.png" alt="">
+                <span class="cart-counter">3</span> <!-- Número de itens no carrinho -->
+            </div>
+            <div class="user-profile">
+                <i class="fa-regular fa-user"></i>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="item">
+                <div class="header-cart">
+                    <div class="header-item">Produto</div>
+                    <div class="header-item">Preço</div>
+                    <div class="header-item">Quantidade</div>
+                    <div class="header-item">Subtotal</div>
+                </div>
+
+                <div id="carrinho-vazio" style="display: none;">
+                    <div class="EmptyBasket-box">
+                        <i class="fas fa-shopping-cart fa-3x custom-icon-color"></i>
+                        <div class="EmptyBasket-title">Seu carrinho está vazio</div>
+                        <div class="EmptyBasket-text">
+                            Vá para a <a href="/index.html">página inicial</a> ou procure no site os produtos que vão te
+                            deixar feliz.<br>
+                            Quando encontrá-los, clique no botão adicionar ao seu carrinho ;)
+                        </div>
+                    </div>
+
+                    <div class="buttons">
+                        <div class="button">Return To Shop</div>
+                        <div class="button">Update Cart</div>
+                    </div>
+                </div>
+
+
+                <div class="checkout-container">
+                    <div class="coupon-section">
+                        <input type="text" id="discountCode" class="discount-input" placeholder="Enter discount code">
+                        <button type="submit" onclick="applyCoupon()" class="apply-coupon-button">Apply Coupon</button>
+                    </div>
+                    <div class="cart-container">
+                        <div class="cart-header">Cart Total:</div>
+                        <div class="subtotal">Subtotal:</div>
+                        <div class="shipping">Shipping:</div>
+                        <div class="total">Total:</div>
+                        <form action="./checkout.html" method="get">
+                            <div class="checkout-button">
+                                <button type="submit">Proceed to Checkout</button>
+                            </div>
+                        </form>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="containerFooter">
+            <div class="firstList">
+                <ul>
+                    <a href="/index.html"><img src="/assets/logoFooter.png" alt="logo" class="logoFooter"></a>
+                    <li><a href="#">Subscribe</a></li>
+                    <li>Get 10% off your first order</li>
+                    <li class="input-icon"><input id="emailInput" type="email" name="email"
+                            placeholder="Enter your email">
+                        <i class="far fa-paper-plane" onclick="submitForm()"></i>
+                    </li>
+                </ul>
+            </div>
+            <div class="secondList">
+                <ul>
+                    <li><a href="#"><strong>Support</strong></a></li>
+                    <li>111 Bijoy sarani, Dhaka, DH 1515, Bangladesh.</li>
+                    <li><a href="#" target="_blank">exclusive@gmail.com</a></li>
+                    <li>+88015-88888-9999</li>
+
+                </ul>
+            </div>
+            <div class="threeList">
+                <ul>
+                    <li><a href="#" target="_blank"><strong>Account</strong></li></a>
+                    <li><a href="#" target="_blank">My Account</a></li>
+                    <li><a href="#">Login / Register</a></li>
+                    <li><a href="/pages/cart.html">Cart</a></li>
+                    <li><a href="#">Wishlist</a></li>
+                    <li><a href="/index.html">Shop</a></li>
+
+                </ul>
+            </div>
+            <div class="fourList">
+                <ul>
+                    <li><a href="#" target="_blank"><strong>Quick Link</strong></li></a>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms Of Use</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="fiveList">
+                <ul>
+                    <li><a href="#"><strong>Download App</strong></li></a>
+                    <li>Save $3 with App New User Only</li>
+                    <li class="fiveList-item"><a href="#" target="_blank"><img src="/assets/Qrcode 1.png"
+                                alt="Qrcode"></a></li>
+                    <li class="fiveList-item--md"><a href="#" target="_blank"><img src="/assets/GooglePlay.png"
+                                alt="PlayStore"></a></li>
+                    <li class="fiveList-item--md"><a href="#" target="_blank"><img src="/assets/appstore.png"
+                                alt="AppStore"></a></li>
+                </ul>
+                <div class="logos-redes-sociales">
+                    <a href="https://www.facebook.com/home.php" target="_blank"><img src="/assets/facebook-icon.png" alt="facebook"></a>
+                    <a href="https://www.instagram.com/" target="_blank"><img src="/assets/instagram-icon.png" alt="facebook"></a>
+                    <a href="https://twitter.com/home" target="_blank"><img src="/assets/twitter-icon.png" alt="facebook"></a>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="containerFooter--md">
+            <p>&copy; Copyright Rimel 2022. All right reserved</p>
+        </div>
+    </footer>
+
+
+    <!--códigos js página cart-->
+    <script src="/js/cart.js"></script>
+    <script src="/js/wishilist.js"></script>
+    <script src="/js/index.js"></script>
+    <script src="/js/checkout.js"></script>
+    <script src="/js/swiper.js"></script>
+
+</body>
+
+</html>
